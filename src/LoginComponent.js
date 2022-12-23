@@ -14,7 +14,7 @@ function LoginComponent(){
     });
     const handleSubmit=async(e)=>{
         e.preventDefault();
-      const response=await axios.post("https://capebackend1.onrender.com/api/signin",{Data});
+      const response=await axios.post("https://capebackend1.onrender.com/api/signin",Data);
        console.log(response);
        if(response){
         localStorage.setItem("token",response);
