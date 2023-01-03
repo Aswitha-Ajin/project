@@ -1,0 +1,105 @@
+.compose1{
+position:  absolute;
+bottom: 0;
+right: 70px;
+min-width: 500px;
+height: auto;
+border-radius: 10px 10px 0px 0px;
+overflow: hidden;
+box-shadow: 0px 0px 8px rgb(203, 212, 219);
+background-color: #fff;
+}
+.compose1 .compose1header{
+    display: flex;
+    justify-content: space-between;
+    background: #333;
+    color: #fff;
+    align-items: center;
+    padding: 7px 15px;
+}
+.compose1headerLeft span{
+font-size: 14px;
+}
+
+.compose1headerRight{
+    display: flex;
+    align-items: center;
+}
+.compose1 .compose1header .compose1headerRight svg{
+    font-size: 18px;
+    margin-left: 10px;
+    transition: 0.2 linear 0s;
+    padding: 3px;
+}
+
+.compose1headerRight svg:hover{
+    background-color: #545454;
+    cursor: pointer;
+}
+.compose1body{
+display: flex;
+
+}
+.compose1bodytype{
+display: flex;
+flex-direction: column;
+}
+.compose1bodytype input,textarea{
+    width: 100%;
+    height: 40px;
+    outline: 0;
+    border: 0px;
+    box-shadow: inset 0 -1px 0 0 rgb(100, 121, 143/12%);
+     padding: 0px 20px; 
+}
+.compose1bodytype input,textarea{
+ height: auto;   
+}
+.compose1footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 10px;
+}
+.compose1footerLeft button{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border: 0px;
+    background-color:#0b57d0;
+    outline: 0;
+    color: #fff;
+    font-size: 13px;
+    padding: 0px 0px 0px 15px !important ;
+    border-radius:40px ;
+    letter-spacing: 1px;
+}
+.compose1footerLeft button svg{
+    border-left: 1px solid black;
+    margin-left: 15px;
+    padding:2px 6px 2px ;
+}
+.compose1footerRight{
+    position: relative;
+    right: 120px;
+}
+
+.compose1footerRight svg{
+font-size: 25px;
+margin-left: 10px;
+border-radius: 3px;
+color: #545454;
+padding: 3px;
+transition:0.2 linear 0s ;
+cursor: pointer;
+
+}
+.compose1footerRight svg:hover{
+background-color: #eee;
+color: #000;
+    
+}
+ .delete{
+    position: relative;
+    left: 2002px;
+ }
+ 

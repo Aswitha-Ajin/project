@@ -1,0 +1,65 @@
+.sidebar{
+    display: flex;
+    flex-direction: column;
+}
+.compose{
+    padding: 10px 20px !important;
+    border-radius: 40px !important;
+    box-shadow: 2px 2px 3px lightblue;
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+    margin-left: 10px !important;
+    max-width: 150px;
+}
+.side{
+    display: flex;
+    align-items: center;
+    height: 30px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius:20px ;
+    padding: 0px 25px;
+    margin-right: 20px;
+   
+    
+}
+.side svg{
+    color: rgb(94,94,94);
+    font-size: 20px;
+    width: 20px;
+
+}
+.side h4{
+    font-size: 14px;
+    flex: 1;
+    margin-left: 10px;
+    font-weight: normal;
+   
+
+}
+.side p{
+opacity: 1;
+color: beige;
+font-size: 12px;
+opacity: 0;
+
+}
+.appbody{
+    display: grid;
+    grid-template-columns: 250px auto 50px;
+}
+.side:hover{
+cursor: pointer;
+background-color: whitesmoke;
+}
+
+.side--active{
+    background-color:  lightskyblue;
+}
+.side--active svg,
+.side--active h4,
+.side--active p
+{
+color:black;
+font-weight: bold;
+opacity: 1 !important ;
+}
