@@ -11,8 +11,10 @@ const Emailbody = () => {
             <div className="emailbody">
             <Emailsetting/>
             <Emailtype/>
-            <Emailbody1 name="Aswitha" subject=" Good Morning" message="  clonegmail clonevgmail clone clonegmail clonegmail clone" time="5:15PM" />
-            
+            <Emailbody1 name="AmbitionBox " subject=" Welcome to Google Analytics!" message="  Valuable insights await you" time="5:15PM" />
+            <Emailbody1 name="AWS India " subject=" Secure your workloads  in the cloud" message="This message distributed by Amazon Web Services iptd " time="5:15PM" />
+            <Emailbody1 name="Bank of Baroda " subject=" Debit Card offers on Meesho " message=" Please click here to see a web based version of this e-mail. " time="5:15PM" />
+            <Emailbody1 name="Flipkart " subject="Tracking " message=" Flipkart customer care " time="5:15PM" />
             
             </div>
         </>

@@ -6,13 +6,7 @@ import RouterComponent from './RouterComponent';
 function App() {
   return (
     <>
- 
-      <RouterComponent />
-      
-     
-      
-      
-
+ <RouterComponent />
     </>
   );
 }

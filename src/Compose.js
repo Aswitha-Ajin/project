@@ -1,5 +1,4 @@
-
-import React from "react";
+import React, { useState } from "react";
 import RemoveIcon from '@mui/icons-material/Remove';
 import CloseIcon from '@mui/icons-material/Close';
 import OpenInFullIcon from '@mui/icons-material/OpenInFull';
@@ -13,56 +12,89 @@ import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile';
 import ImageIcon from '@mui/icons-material/Image';
 import CreateIcon from '@mui/icons-material/Create';
 import DeleteIcon from '@mui/icons-material/Delete';
-
-//import { IconButton } from "@mui/material";
-const Compose=()=>{
-    return(
-
-        <>
-       <div className="compose1">
-       <div className="compose1header">
-       <div className="compose1headerLeft">
-<span>New Message</span>
-       </div>
-      <div className="compose1headerRight">
-
-<RemoveIcon/>
-<OpenInFullIcon/>
-<CloseIcon/>
+import {Button} from "@mui/material";
+import { closeSendMessage } from "./EmailSlice";
+import { useDispatch } from "react-redux";
 
 
-      </div>
-      </div>
-       <div className="compose1body">
-       <div className="compose1bodytype">
-<input type="email" placeholder="Reciepients"/>
-<input type="email" placeholder="Subject"/>
-<textarea rows="20"></textarea>
 
-</div> 
-       </div>
-       <div className="compose1footer">
-       <div className="compose1footerLeft">
-         <button type="submit">
-            Send <ArrowDropDownIcon/>
-         </button>
-</div>
-<div className="compose1footerRight">
-<TextFormatIcon/>
-<AttachFileIcon/>
-<InsertLinkIcon/>
-<InsertEmoticonIcon/>
-<InsertDriveFileIcon/>
-<ImageIcon/>
-<CreateIcon />
-<DeleteIcon/>
+const Compose = () => {
+       const [to, setTo] = useState("");
+       const [subject, setSubject] = useState("");
+       const [message, setMessage] = useState("");
 
-</div>
-       </div>
-       </div>
-      
-         
-        </>
-    );
+       const dispatch = useDispatch();
+
+       const formSubmit = (e) => {
+              e.preventDefault();
+              if(to === " ") {
+                     return alert("To is required");
+              }
+              if(subject === " ") {
+                     return alert("Subject is required");
+              }
+              
+              
+                    setTo(" ");
+                     setSubject(" ");
+                     setMessage(" ");
+              
+              dispatch(closeSendMessage());
+       }
+       
+       return (
+
+              <>
+                     <div className="compose1">
+                            <div className="compose1header">
+                                   <div className="compose1headerLeft">
+                                          <span>New Message</span>
+                                   </div>
+                                   <div className="compose1headerRight">
+
+                                          <RemoveIcon />
+                                          <OpenInFullIcon />
+                                          <CloseIcon onClick={() => dispatch(closeSendMessage())} />
+
+
+                                   </div>
+                            </div>
+                            <form onSubmit={formSubmit}>
+                                   <div className="compose1body">
+                                          <div className="compose1bodytype">
+                                                 <input type="email" placeholder="Reciepients" value={to} onChange={(e) => setTo(e.target.value)} />
+                                                 <input type="text" placeholder="Subject" value={subject} onChange={(e) => setSubject(e.target.value)} />
+                                                 <textarea rows="20" value={message} onChange={(e) => setMessage(e.target.value)}>{message}</textarea>
+
+                                          </div>
+
+                                   </div>
+                            
+                            <div className="compose1footer">
+                                   <div className="compose1footerLeft">
+                                          <Button type="submit">
+                                                 Send <ArrowDropDownIcon />
+                                          </Button>
+                                   </div>
+
+                                   <div className="compose1footerRight">
+                                          <TextFormatIcon />
+                                          <AttachFileIcon />
+                                          <InsertLinkIcon />
+                                          <InsertEmoticonIcon />
+                                          <InsertDriveFileIcon />
+                                          <ImageIcon />
+                                          <CreateIcon />
+                                          <DeleteIcon />
+
+                                   </div>
+                            </div>
+                            </form>
+                     </div>
+
+
+              </>
+       );
 }
 export default Compose;
+

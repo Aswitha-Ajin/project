@@ -11,10 +11,13 @@ import Compose from "./Compose"
 import { IconButton, Avatar } from "@mui/material";
 
 import "./CSS/header.css";
+import { useSelector } from "react-redux";
+import { selectSendMessageIsOpen } from "./EmailSlice";
 //import "./CSS/sidebar.css";
 
 
-function header() {
+function Header() {
+    const messageopen= useSelector(selectSendMessageIsOpen)
     return (
         <>  
             <div className="header">
@@ -63,7 +66,14 @@ function header() {
 
       
             </div>
-           <Compose/>
+            
+            <div>
+                {
+                    
+                messageopen && <Compose/>
+                }
+            </div>
+           
             
             
            
@@ -73,4 +83,4 @@ function header() {
 
     );
 }
-export default header;
+export default Header;

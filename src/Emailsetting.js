@@ -43,7 +43,7 @@ const Emailsetting = () => {
                     </IconButton>
                     <IconButton>
                         <FilterListIcon />
-                    </IconButton>
+                    </IconButton>  
 
 
                 </div>

@@ -11,8 +11,11 @@ import LabelImportantIcon from '@mui/icons-material/LabelImportant';
 import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import AddIcon from '@mui/icons-material/Add';
+import { useDispatch } from "react-redux";
+import {openSendMessage} from "./EmailSlice";
 
 const Sidebar = () => {
+    const dispatch=useDispatch();
     return (
 
         <>
@@ -20,7 +23,7 @@ const Sidebar = () => {
 <div className="Sidebar">
 
 <Button startIcon={<CreateIcon />}
-           className="compose">Compose</Button>
+           className="compose" onClick={()=>dispatch(openSendMessage())}>Compose</Button>
         <Sidebaroptions Icon={InboxIcon} title="Inbox" number="3" active={true} />
        <Sidebaroptions Icon={StarOutlineIcon} title="Starred" number={56} />
        <Sidebaroptions Icon={AccessTimeIcon} title="Snoozed" number={56} />
