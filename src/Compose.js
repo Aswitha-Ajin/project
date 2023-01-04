@@ -72,7 +72,7 @@ const Compose = () => {
                             
                             <div className="compose1footer">
                                    <div className="compose1footerLeft">
-                                          <Button type="submit">
+                                          <Button variant="contained" type="submit">
                                                  Send <ArrowDropDownIcon />
                                           </Button>
                                    </div>
