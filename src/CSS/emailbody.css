@@ -96,6 +96,10 @@ padding: 0px 10px;
         align-items: center;
         flex: 90%;
         }
+        .emailbodyMiddle1 .emailbodyMiddle1Msg{
+display: flex;
+width: 90%;
+        }       
 .emailbodyMiddle1 p{  
     font-size: 13px;
     white-space: nowrap;

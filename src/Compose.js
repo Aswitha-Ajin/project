@@ -15,7 +15,8 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import {Button} from "@mui/material";
 import { closeSendMessage } from "./EmailSlice";
 import { useDispatch } from "react-redux";
-
+import { db } from "./firebase";
+import firebase from "firebase";
 
 
 const Compose = () => {
@@ -34,7 +35,14 @@ const Compose = () => {
                      return alert("Subject is required");
               }
               
-              
+              db.collection("login").add({
+                     to,
+                     subject,
+                      message,
+                     timestamp:firebase.firestore.FieldValue.serverTimestamp()
+                     });
+                     alert("Email send successfully");
+
                     setTo(" ");
                      setSubject(" ");
                      setMessage(" ");
@@ -72,7 +80,7 @@ const Compose = () => {
                             
                             <div className="compose1footer">
                                    <div className="compose1footerLeft">
-                                          <Button type="submit">
+                                          <Button variant="contained" type="submit">
                                                  Send <ArrowDropDownIcon />
                                           </Button>
                                    </div>
