@@ -13,7 +13,7 @@ import { IconButton, Avatar } from "@mui/material";
 import "./CSS/header.css";
 import { useSelector } from "react-redux";
 import { selectSendMessageIsOpen } from "./EmailSlice";
-//import "./CSS/sidebar.css";
+
 
 
 function Header() {
