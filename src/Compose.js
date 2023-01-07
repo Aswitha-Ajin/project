@@ -15,8 +15,12 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import {Button} from "@mui/material";
 import { closeSendMessage } from "./EmailSlice";
 import { useDispatch } from "react-redux";
-import { db } from "./firebase";
-import firebase from "firebase";
+//import firebase from "firebase";
+import { db } from "./firebase.js";
+import { getFirestore, collection, getDocs,addDoc, Timestamp } from 'firebase/firestore/lite';
+import { Login } from "@mui/icons-material";
+
+
 
 
 const Compose = () => {
@@ -26,7 +30,7 @@ const Compose = () => {
 
        const dispatch = useDispatch();
 
-       const formSubmit = (e) => {
+       const formSubmit = async(e) => {
               e.preventDefault();
               if(to === " ") {
                      return alert("To is required");
@@ -34,13 +38,15 @@ const Compose = () => {
               if(subject === " ") {
                      return alert("Subject is required");
               }
-              
-              db.collection("login").add({
-                     to,
-                     subject,
-                      message,
-                     timestamp:firebase.firestore.FieldValue.serverTimestamp()
-                     });
+              await addDoc(collection(db,"login"),{
+                     to,subject,message,timestamp:Timestamp
+              })
+              // db.collection("login").add({
+              //        to,
+              //        subject,
+              //         message,
+              //        timestamp:firebase.firestore.FieldValue.serverTimestamp()
+              //        });
                      alert("Email send successfully");
 
                     setTo(" ");
